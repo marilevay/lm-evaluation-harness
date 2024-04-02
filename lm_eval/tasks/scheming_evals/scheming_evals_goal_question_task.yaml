@@ -1,0 +1,7 @@
+task: scheming_evals_goal_question_task
+dataset_path: MarinaLevay/scheming-dataset-questions/scheming_dataset_questions.csv
+dataset_name: scheming_dataset_questions
+doc_to_text: "Subject: {{subject}}\nScenario: {{scenario}}\nQuestion: {{goal_question}}\nAnswer: "
+doc_to_target: "{{goal_answer}}"
+metric_list:
+  - metric: acc

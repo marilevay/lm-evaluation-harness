@@ -23,7 +23,15 @@ def bypass_agg(arr):
 
 @register_aggregation("mean")
 def mean(arr):
-    return sum(arr) / len(arr)
+    numeric_elements = [x for x in arr if isinstance(x, (int, float))]
+    
+    # Calculate sum and average
+    total = sum(numeric_elements)
+    if len(numeric_elements) == 0:
+        return 0  # To avoid division by zero
+    mean = total / len(numeric_elements)
+    
+    return mean
 
 
 @register_aggregation("median")
