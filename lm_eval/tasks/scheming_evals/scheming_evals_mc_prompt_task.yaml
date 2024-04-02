@@ -1,4 +1,4 @@
-task: scheming_evals_free_response
+task: scheming_evals_mc_prompt_task
 dataset_path: csv
 dataset_kwargs:
   data_files:
