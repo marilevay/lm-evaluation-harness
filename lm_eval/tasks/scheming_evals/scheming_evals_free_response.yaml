@@ -2,12 +2,11 @@ task: scheming_evals_free_response
 dataset_path: csv
 dataset_kwargs:
   data_files:
-    validation: /Users/marina.levay/Documents/GitHub/lm-evaluation-harness/lm_eval/tasks/scheming_evals/scheming_questions.csv
-description: The following questions are meant to be used
+    validation: /Users/marina.levay/Documents/GitHub/lm-evaluation-harness/lm_eval/tasks/scheming_evals/combined_data.csv
 output_type: generate_until
 validation_split: validation
 test_split: null
-doc_to_text: "Subject: {{subject}}\nScenario: {{scenario}}\nQuestion: {{free_response_prompt.strip()}}\nAnswer:"
+doc_to_text: "Subject: {{subject}}\n\nScenario: {{scenario}}\n\nQuestion: {{free_response_prompt}}\n\nAnswer: "
 doc_to_target: ''
 metric_list:
   - metric: acc

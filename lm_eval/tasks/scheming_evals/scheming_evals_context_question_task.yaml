@@ -1,4 +1,4 @@
-task: scheming_evals_mc_prompt_task
+task: scheming_evals_context_question_task
 dataset_path: csv
 dataset_kwargs:
   data_files:
@@ -6,8 +6,8 @@ dataset_kwargs:
 output_type: generate_until
 validation_split: validation
 test_split: null
-doc_to_text: "Subject: {{subject}}\n\nScenario: {{scenario}}\n\nQuestion: {{mc_prompt}}\n\n1. {{1}}\n2. {{2}}\n\nAnswer:"
-doc_to_target: "{{answer}}"
+doc_to_text: "Subject: {{subject}}\n\nScenario: {{scenario}}\n\nQuestion: {{context_question}}\n\nAnswer: "
+doc_to_target: "{{context_answer}}"
 metric_list:
   - metric: acc
     aggregation: mean

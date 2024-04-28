@@ -1,7 +1,17 @@
 task: scheming_evals_goal_question_task
-dataset_path: MarinaLevay/scheming-dataset-questions/scheming_dataset_questions.csv
-dataset_name: scheming_dataset_questions
-doc_to_text: "Subject: {{subject}}\nScenario: {{scenario}}\nQuestion: {{goal_question}}\nAnswer: "
+dataset_path: csv
+dataset_kwargs:
+  data_files:
+    validation: /Users/marina.levay/Documents/GitHub/lm-evaluation-harness/lm_eval/tasks/scheming_evals/scheming_questions.csv
+output_type: generate_until
+validation_split: validation
+test_split: null
+doc_to_text: "Subject: {{subject}}\n\nScenario: {{scenario}}\n\nQuestion: {{goal_question}}\n\nAnswer: "
 doc_to_target: "{{goal_answer}}"
 metric_list:
   - metric: acc
+    aggregation: mean
+    higher_is_better: true
+  - metric: acc_norm
+    aggregation: mean
+    higher_is_better: true
